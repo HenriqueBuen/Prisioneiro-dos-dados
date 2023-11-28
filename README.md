@@ -83,6 +83,26 @@ UPDATE medicos SET em_atividade = 'sim' where null;
 
 UPDATE medicos SET em_atividade = 'não' where id_medicos = '7' and '9'
 
+
+
+
+
+
+Parte 3:
+SELECT AVG(valor_consulta) AS media_consultas FROM hospital WHERE YEAR(data_consulta) = 2020 OR convenio_consulta = 'Sim';
+
+SELECT * FROM hospital WHERE data_alta_internacao < prevista_alta_internacao;
+
+SELECT * FROM hospital WHERE id_consulta = (SELECT MIN(id_consulta) FROM hospital);
+
+SELECT * FROM hospital WHERE convenio_consulta = 'Não' ORDER BY valor_consulta DESC LIMIT 1;
+
+SELECT * FROM hospital WHERE convenio_consulta = 'Não' ORDER BY valor_consulta ASC LIMIT 1;
+
+SELECT data_entrada_internacao, procedimento_internacao, id_quarto FROM hospital WHERE tipo_quarto = 'Apartamento';
+
+SELECT nome_paciente, nome_medico, data_entrada_internacao, procedimento_internacao FROM hospital WHERE especialidade_medico = 'Gastroenterologia'
+
     
         Execute os scripts SQL para população de dados na pasta 'data_population'.
 
